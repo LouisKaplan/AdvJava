@@ -1,0 +1,33 @@
+public class Lab9{
+
+   1. Which ant task do we use to generate javadoc in this course?
+        //ant jdoc
+   2. What is the javadoc comment format?
+        What is the first sentence of a javadoc comment used for? 
+            //Introduces the class, appears at the top, under the class name
+        Where does it appear in the generated html?
+            //under the class name
+        How should paragraphs be separated?
+            //<p> tag
+        Should blank lines be used? If so, where/why?
+            //yes - between description and list of tags
+        Where does a method or class description end?
+            //Where the tags begin
+   3. How are these tags used? 
+        When are they used? 
+        What is the proper format or structure?
+        @author //classes and interfaces only, to name the authors
+        @param //methods only, lists the parameters
+        @return //methods only, lists what is being returned
+        @throws //describes throws that go along with exceptions
+        @see //reference, often when showing methods that call the current one
+        @since // lists the version of the project the time Java is added
+    4. Demonstrate use of html in javadoc.
+        //done!
+    5. When are comments inherited?
+        //When a method in a class overrides a method in a superclass
+        //When a method in an interface overrides a method in a superinterface
+        //When a method in a class implements a method in an interface
+
+
+}

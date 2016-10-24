@@ -1,0 +1,6 @@
+Application: null
+Author: Eric Knapp
+email: null
+Input file: /home/student/Dropbox/projects/inputFile
+Analyzed on: Wed Oct 19 19:58:02 CDT 2016
+Total token count: 10

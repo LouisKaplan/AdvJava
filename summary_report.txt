@@ -1,0 +1,6 @@
+Application: HowManyTokens
+Author: Louis Kaplan
+email: LKaplan@madisoncollege.edu
+Input file: /home/student/Dropbox/projects/bigFile.txt
+Analyzed on: Thu Oct 06 23:58:49 CDT 2016
+Total token count: 4468588
