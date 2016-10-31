@@ -36,6 +36,8 @@
         <li><a href="/java112/first">Name and Image</a></li>
         <li>&ndash;</li>
         <li><a href="/java112/serveletTable">Info Table</a></li>
+        <li>&ndash;</li>
+        <li><a href="myFirstJSP.jsp">MyFirst JSP</a></li>
     </ul>
   
   </div><!-- end #topMenu -->
