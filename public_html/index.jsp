@@ -38,6 +38,10 @@
         <li><a href="/java112/serveletTable">Info Table</a></li>
         <li>&ndash;</li>
         <li><a href="myFirstJSP.jsp">MyFirst JSP</a></li>
+        <li>&ndash;</li>
+        <li><a href="/java112/lab33">Using the EL</a></li>
+        <li>&ndash;</li>
+        <li><a href="/java112/mvc-demo">MVC Demo</a></li>
     </ul>
   
   </div><!-- end #topMenu -->

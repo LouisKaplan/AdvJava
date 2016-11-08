@@ -1,5 +1,3 @@
-<%@ page import="java.util.Random"%>
-
 <html>
 
 <head>
@@ -22,3 +20,4 @@
 	<%= request.getRemoteAddr() %><br />
 	
 </body>
+</html>

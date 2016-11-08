@@ -9,7 +9,6 @@
 <h2><a href = "/java112">Return Home</a></h2>
 <%= new java.util.Date() %>
 <%-- JSP Comment! --%>
-<% request %>
 <h2>This Is A New Line!</h2>
 </BODY>
 </HTML>
