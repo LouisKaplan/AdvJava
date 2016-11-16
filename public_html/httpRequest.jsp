@@ -64,35 +64,34 @@
 
         <div class="blogItem">
 
-            <h2>Java 112: Project 2</h2>
-            <h3>Oct 16, 2016</h3>
-
-
-            <h3>The concepts we will be exploring with this project include:</h3>
+            <h2>Header Responses</h2>
             <ul>
-                <li>Extending a working Java application</li>
-                <li>The Java Collection Framework</li>
-                <li>Running a servlet engine</li>
-                <li>Coding a servlet</li>
-                <li>Accessing a servlet from an html page</li>
-                <li>The Properties class</li>
-                <li>Loading and using a properties file</li>
+                <li><b>The remote computer making the request:</b></li>
+                <li>${httpRequest.remoteComputer}</li>
+                <li><b>The address of the remote computer making the request:</b></li>
+                <li>${httpRequest.remoteAddress}</li>
+                <li><b>The HTTP method of the request:</b></li>
+                <li>${httpRequest.httpMethod}</li>
+                <li><b>The request URI:</b></li>
+                <li>${httpRequest.requestURI}</li>
+                <li><b>The request URL:</b></li>
+                <li>${httpRequest.requestURL}</li>
+                <li><b>The protocol of the request:</b></li>
+                <li>${httpRequest.requestProtocol}</li>
+                <li><b>The server name:</b></li>
+                <li>${httpRequest.serverName}</li>
+                <li><b>The server port number:</b></li>
+                <li>${httpRequest.serverPort}</li>
+                <li><b>The current Locale of the server:</b></li>
+                <li>${httpRequest.currentLocale}</li>
+                <li><b>The query string:</b></li>
+                <li>${httpRequest.queryString}</li>
+                <li><b>The value of a query parameter with the name of "queryParameter":</b></li>
+                <li>${httpRequest.queryParameter}</li>
+                <li><b>The value of the request header with the name of "User-Agent":</b></li>
+                <li>${httpRequest.userAgent}</li>
             </ul>
             </br>
-
-            <h3>Readings</h3>
-            <ul>
-                <li>From Core Servlets and JavaServer Pages by Marty Hall</li>
-                <li>Chapter 1: An Overview of Servlet and JSP Technology</li>
-                <li>Chapter 3: Servlet Basics</li>
-                <li>The official Servlets tutorial from Sun</li>
-            </ul>
-            </br>
-
-            <h3>Project Overview</h3>
-            <p>This project will extend project 1 with more file analyzers and a project properties file.
-                This project will also be an introduction to Servlets and server-side java web programming.
-                You will be starting to create a web application.</p>
 
 
 

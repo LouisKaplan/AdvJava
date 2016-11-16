@@ -12,15 +12,12 @@ import java.lang.*;
  */
 public class SummaryReport implements Analyzer{
 
-    private int totalTokensCount;
-    private Properties properties;
-
-/**
- * SummaryReport is a constructor class.<p>
- * SummaryReport is a constructor that sets the initial value of the 
- * totalTokensCount to 0 and loads the properties file.
- * @param properties is the properties file that was passed in.
- */ 
+    /**
+     * SummaryReport is a constructor class.<p>
+     * SummaryReport is a constructor that sets the initial value of the
+     * totalTokensCount to 0 and loads the properties file.
+     * @param properties is the properties file that was passed in.
+     */
     public SummaryReport(Properties properties) {
         this();
         this.properties = properties;
@@ -29,6 +26,12 @@ public class SummaryReport implements Analyzer{
     public SummaryReport(){
         totalTokensCount = 0;
     }
+
+    private int totalTokensCount = 0;
+    private Properties properties;
+
+
+
 
 /**
  * getTotalTokensCount returns the final count of tokens. 

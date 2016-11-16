@@ -81,6 +81,7 @@ public class AnalyzeFile{
         analyzerList.add(new TokenCountAnalyzer(properties));
         analyzerList.add(new TokenSizeAnalyzer(properties));
         analyzerList.add(new KeywordAnalyzer(properties));
+
     }
 
 /**

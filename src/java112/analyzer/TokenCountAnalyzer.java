@@ -4,22 +4,19 @@ import java.util.*;
 import java.lang.*;
 
 /**
- * UniqueTokenAnalyzer created a TreeSet containing each unique string created
- * when we broke down the input file, alog with a count of how many times that token appeared.
+ * TokenCountAnalyzer created a TreeSet containing each unique string created
+ * when we broke down the input file, along with a count of how many times that token appeared.
  * @author Louis Kaplan
  * @version 0.2
  */
 public class TokenCountAnalyzer implements Analyzer{
 
-    private Properties properties;
-    private Map<String, Integer> tokenCounts;
-
-/**
- * TokenCountAnalyzer is a constructor class.<p>
- * TokenCountAnalyzer is a constructor that creates a new TreeMap to hold
- * an ordered list of map entries, each of which holds a key and a value.
- * @param properties is the properties file that was passed in.
- */ 
+    /**
+     * TokenCountAnalyzer is a constructor class.<p>
+     * TokenCountAnalyzer is a constructor that creates a new TreeMap to hold
+     * an ordered list of map entries, each of which holds a key and a value.
+     * @param properties is the properties file that was passed in.
+     */
     public TokenCountAnalyzer(Properties properties){
         this();
         this.properties = properties;
@@ -28,6 +25,11 @@ public class TokenCountAnalyzer implements Analyzer{
     public TokenCountAnalyzer(){
         tokenCounts = new TreeMap<String, Integer>();
     }
+
+
+    private Properties properties;
+    private Map<String, Integer> tokenCounts;
+
 
 /**
  * getUniqueTokensList returns the set of unique tokens generated so far.

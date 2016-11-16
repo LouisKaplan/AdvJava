@@ -64,35 +64,35 @@
 
         <div class="blogItem">
 
-            <h2>Java 112: Project 2</h2>
-            <h3>Oct 16, 2016</h3>
+            <h2>Properties Table</h2>
+            <table>
 
-
-            <h3>The concepts we will be exploring with this project include:</h3>
-            <ul>
-                <li>Extending a working Java application</li>
-                <li>The Java Collection Framework</li>
-                <li>Running a servlet engine</li>
-                <li>Coding a servlet</li>
-                <li>Accessing a servlet from an html page</li>
-                <li>The Properties class</li>
-                <li>Loading and using a properties file</li>
-            </ul>
+                <tr>
+                    <td>Author:</td>
+                    <td>${servletProperties.getProperty("author")}</td>
+                </tr>
+                <tr>
+                    <td>Author Email Address:</td>
+                    <td>${servletProperties.getProperty("author.email.address")}</td>
+                </tr>
+                <tr>
+                    <td>Course Name:</td>
+                    <td>${servletProperties.getProperty("course.name")}</td>
+                </tr>
+                <tr>
+                    <td>Class Meeting Times:</td>
+                    <td>${servletProperties.getProperty("class.meeting.times")}</td>
+                </tr>
+                <tr>
+                    <td>Instructor Name</td>
+                    <td>${servletProperties.getProperty("instructor.name")}</td>
+                </tr>
+                <tr>
+                    <td>Project Description</td>
+                    <td>${servletProperties.getProperty("project.description")}</td>
+                </tr>
+            </table>
             </br>
-
-            <h3>Readings</h3>
-            <ul>
-                <li>From Core Servlets and JavaServer Pages by Marty Hall</li>
-                <li>Chapter 1: An Overview of Servlet and JSP Technology</li>
-                <li>Chapter 3: Servlet Basics</li>
-                <li>The official Servlets tutorial from Sun</li>
-            </ul>
-            </br>
-
-            <h3>Project Overview</h3>
-            <p>This project will extend project 1 with more file analyzers and a project properties file.
-                This project will also be an introduction to Servlets and server-side java web programming.
-                You will be starting to create a web application.</p>
 
 
 

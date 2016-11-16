@@ -5,13 +5,24 @@ import java.lang.*;
 import java.math.*;
 
 /**
- * Created by student on 11/10/16.
+ * TokenSizeAnalyzer creates a map that contains word lengths
+ * and the number of words that fit that length.
+ * It also contains a visual representation of this map.
+ * @author Louis Kaplan
+ * @version 0.2
  */
 public class TokenSizeAnalyzer implements Analyzer{
 
-    private Map<Integer, Integer> tokenSizes;
-    private Properties properties;
-    private int maximumSize;
+    /**
+     * TokenSizeAnalyzer is a constructor class.<p>
+     * TokenSizeAnalyzer is a constructor that creates a new TreeMap,
+     * which will eventually hold an integer with the number of
+     * tokens that match the length present in that key.
+     * maximumSize stores the largest map value so that
+     * we can eventually make a scale that compares the other
+     * values relatively.
+     * @param properties is the properties file that was passed in.
+     */
 
     public TokenSizeAnalyzer(Properties properties){
         this();
@@ -23,11 +34,18 @@ public class TokenSizeAnalyzer implements Analyzer{
         int maximumSize = 0;
     }
 
+    private Map<Integer, Integer> tokenSizes;
+    private Properties properties;
+    private int maximumSize;
 
     public Map<Integer, Integer> getTokenSizes() {
         return tokenSizes;
     }
 
+    /**
+     * getMaximumSize returns the largest value in the tokenSizes map.
+     * @return maximumSize is the largest value in the tokenSizes map.
+     */
     public int getMaximumSize() {
         return maximumSize;
     }
@@ -39,15 +57,6 @@ public class TokenSizeAnalyzer implements Analyzer{
             tokenTally++;
             tokenSizes.put(tokenSize, tokenTally);
         } else tokenSizes.put(tokenSize, 1);
-        determineMaximumSize();
-    }
-
-    public void determineMaximumSize(){
-        for(Integer highNumber : tokenSizes.values()){
-            if(highNumber > maximumSize){
-                maximumSize = highNumber;
-            }
-        }
     }
 
     public void writeOutputFile(String inputFilePath){
@@ -75,8 +84,18 @@ public class TokenSizeAnalyzer implements Analyzer{
         }
     }
 
+    /**
+     * printStars takes in the map with integers and converts that data to a visual representation<p>
+     * This method calls determineMaximumSize to figure out the largest value in the map.
+     * From there it assigns each key's relative value to numberOfStars, and then prints
+     * a scaled number of asterisks for each key.
+     * @param out is the PrintWriter, allowing it to write to the file
+     * @param mapTree is the set of map entries containing our data
+     */
+
     public void printStars(PrintWriter out, Set<Map.Entry<Integer, Integer>> mapTree) {
         out.write("\r\n");
+        determineMaximumSize();
         for (Map.Entry<Integer, Integer> mapEntries : mapTree) {
             Integer key = mapEntries.getKey();
             Integer value = mapEntries.getValue();
@@ -90,6 +109,19 @@ public class TokenSizeAnalyzer implements Analyzer{
                 numberOfStars--;
             }
             out.write("\r\n");
+        }
+    }
+
+    /**
+     * determineMaximumSize loops through the map and determines the highest value.<p>
+     * This method checks each value of the tokenSizes map. If it is higher than the
+     * current highest value, it replaces that value.
+     */
+    public void determineMaximumSize(){
+        for(Integer highNumber : tokenSizes.values()){
+            if(highNumber > maximumSize){
+                maximumSize = highNumber;
+            }
         }
     }
 }

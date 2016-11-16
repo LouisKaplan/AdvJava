@@ -11,16 +11,13 @@ import java.lang.*;
  */
 public class UniqueTokenAnalyzer implements Analyzer{
 
-    private Set<String> uniqueTokensList;
-    private Properties properties;
-
-/**
- * UniqueTokenAnalyzer is a constructor class.<p>
- * UniqueTokenAnalyzer is a constructor that creates a new TreeSet to hold
- * an ordered list of entries, each of which holds a token, and also loads a
- * properties file.
- * @param properties is the properties file that was passed in.
- */ 
+    /**
+     * UniqueTokenAnalyzer is a constructor class.<p>
+     * UniqueTokenAnalyzer is a constructor that creates a new TreeSet to hold
+     * an ordered list of entries, each of which holds a token, and also loads a
+     * properties file.
+     * @param properties is the properties file that was passed in.
+     */
     public UniqueTokenAnalyzer(Properties properties){
         this();
         this.properties = properties;
@@ -29,6 +26,9 @@ public class UniqueTokenAnalyzer implements Analyzer{
     public UniqueTokenAnalyzer(){
         uniqueTokensList = new TreeSet<String>();
     }
+
+    private Set<String> uniqueTokensList;
+    private Properties properties;
 
 /**
  * getUniqueTokensList returns the set of unique tokens generated so far.

@@ -11,16 +11,12 @@ import java.lang.*;
  */
 public class BigWordAnalyzer implements Analyzer{
 
-    private Set<String> bigWords;
-    private Properties properties;
-    private int minimumWordLength;
-
-/**
- * BigWordAnalyzer is a constructor class.<p>
- * BigWordAnalyzer is a constructor that creates a new TreeSet, loads a properties file,
- * and sets the minimum word length with information from the properties file.
- * @param properties is the properties file that was passed in.
- */ 
+    /**
+     * BigWordAnalyzer is a constructor class.<p>
+     * BigWordAnalyzer is a constructor that creates a new TreeSet, loads a properties file,
+     * and sets the minimum word length with information from the properties file.
+     * @param properties is the properties file that was passed in.
+     */
     public BigWordAnalyzer(Properties properties){
         this();
         this.properties = properties;
@@ -30,6 +26,12 @@ public class BigWordAnalyzer implements Analyzer{
     public BigWordAnalyzer(){
         bigWords = new TreeSet<String>();
     }
+
+    private Set<String> bigWords;
+    private Properties properties;
+    private int minimumWordLength;
+
+
 
     public Set<String> getBigWords() {
         return bigWords;

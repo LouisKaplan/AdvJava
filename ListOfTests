@@ -1,0 +1,4 @@
+    [junit] Running java112.tests.KeywordAnalyzerOutputTest
+    [junit] Tests run: 8, Failures: 3, Errors: 0, Skipped: 0, Time elapsed: 0.04 sec
+    [junit] Test java112.tests.KeywordAnalyzerOutputTest FAILED
+
