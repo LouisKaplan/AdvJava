@@ -113,15 +113,13 @@ public class TokenSizeAnalyzer implements Analyzer{
     }
 
     /**
-     * determineMaximumSize loops through the map and determines the highest value.<p>
-     * This method checks each value of the tokenSizes map. If it is higher than the
-     * current highest value, it replaces that value.
+     * determineMaximumSize determines the highest value in the map.<p>
+     * This method checks creates a collection from the values in the map,
+     * then sets maximumSize to the highest value in that map.
      */
     public void determineMaximumSize(){
-        for(Integer highNumber : tokenSizes.values()){
-            if(highNumber > maximumSize){
-                maximumSize = highNumber;
-            }
-        }
+        Collection<Integer> setOfKeys = tokenSizes.values();
+        maximumSize = Collections.max(setOfKeys);
+        System.out.println(maximumSize);
     }
 }

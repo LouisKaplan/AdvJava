@@ -85,7 +85,7 @@ public class KeywordAnalyzer implements Analyzer{
 
             for(String entry : keywordMap.keySet()){
                 List<Integer> printList = keywordMap.get(entry);
-                out.write(entry + " = \r\n");
+                out.write(entry + " =\r\n");
                 out.write("[");
                 int linesInCurrentRow = 0;
                 for(Integer integerPosition : printList){
