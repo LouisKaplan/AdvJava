@@ -18,6 +18,8 @@
 
         <div class="blogItem">
 
+            <h1>Session Counter for Project 4 Labs</h1>
+
             <p>Session Count: ${project4SessionCounter}</p>
 
         </div><!-- end #blogItem -->

@@ -10,11 +10,11 @@ import java.util.List;
 import java.util.Properties;
 
 @WebServlet(
-        name = "Lab41Servlet",
-        urlPatterns = { "/Lab41Servlet" }
+        name = "SessionLab",
+        urlPatterns = { "/SessionLab" }
 )
 
-public class Lab41Servlet extends HttpServlet {
+public class Project4SessionLab extends HttpServlet {
 
 
     public void init() throws ServletException {
@@ -30,14 +30,18 @@ public class Lab41Servlet extends HttpServlet {
      */
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-        String userName = request.getParameter("nameEntryField");
-        String userText = request.getParameter("someTextField");
+        HttpSession session = request.getSession();
+        Integer sessionCounter = (Integer) session.getAttribute("project4SessionCounter");
 
-        String fullString = "Hello " + userName + ", here is your text: " + userText;
+        if(sessionCounter == null){
+            sessionCounter = 1;
+        } else {
+            sessionCounter++;
+        }
 
-        request.setAttribute("outputString", fullString);
+        session.setAttribute("project4SessionCounter", sessionCounter);
 
-        String url = "/lab41.jsp";
+        String url = "/Project4Session.jsp";
 
         RequestDispatcher dispatcher
                 = getServletContext().getRequestDispatcher(url);
