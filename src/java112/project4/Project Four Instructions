@@ -1,0 +1,114 @@
+Home Page
+
+Your home page will need to be altered to add the links for this project:
+
+    A link to the project 4 Employee Search Page
+    A link to the project 4 Add Employee Page
+
+Project 4 Properties File
+
+    The file will also have entries to enable the application to establish a connection to a database.
+    You will need the following entries:
+        driver – this will be the fully qualified name of the driver class
+        url – this will be the URL to the database
+        username – your mysql username
+        password – your mysql password
+
+EmployeeDirectory Class
+
+    Create a method that will add a new record to the Employee table in the database. This method will have the following features:
+        /The method will have an argument for each of the instance variables in the Employee class.
+        /The method will get a connection to the database.
+        /The method will generate a SQL insert statement.
+        /The method will run the correct JDBC code to insert the new employee into the database including all necessary exception handling.
+    Create a method that will search for an Employee in the database by employee id. It will have the following features:
+        The method will have a Search object as an argument.
+        The method will get a connection to the database.
+        The method will generate a SQL select statement using the employee ID from the Search object in a where clause.
+        The method will run the query using the JDBC code including all necessary exception handling.
+        If the query returns any rows then set the boolean instance variable in the Search object to true. If the query does not return any rows then set the variable to false.
+        If the query returns rows, then the method will instantiate a new Employee object for each row and set its instance variables from the row from the database. Each new Employee object will be added to the Search object with the addFoundEmployee() method.
+        The method will close the connection.
+    Create a method that will search for Employees by last name in the database. It will have the following features:
+        The method will have a Search object as an argument.
+        The method will get a connection to the database.
+        The method will generate a SQL select statement using the last name from the Search object in a where clause.
+        The method will run the query using the JDBC code including all necessary exception handling.
+        If the query returns any rows then set the boolean instance variable in the Search object to true. If the query does not return any rows then set the variable to false.
+        If the query returns rows, then the method will instantiate a new Employee object for each row and set its instance variables from the row from the database. Each new Employee object will be added to the Search object with the addFoundEmployee() method.
+        The method will close the connection.
+
+Employee Search
+Employee Search JSP Page
+
+    Create a JSP page that will allow the user to search for employees and place it in your public_html/jsp directory. Use the new template system for this page.
+    In the content portion of the page you should do the following.
+        Add an HTML form to the page that has the following features:
+            The action attribute will point to the Employee Search Servlet.
+            A text field for entering the search term.
+            A radio button set for selecting the search type. There will be 2 radio buttons, one for searching by ID and one for searching by Last Name.
+        A submit button.
+
+Employee Search JSP Page Display Servlet
+
+    Create a servlet that has one simple purpose, to forward to the Employee Search JSP Page. We’re going to only access JSP pages through servlets in this project.
+    The servlet will only have a doGet() method which forwards to the JSP page.
+
+Employee Search Results Servlet
+
+    Create a servlet that will perform searches for employees. Place it in the java112.project4 package.
+    This servlet will not need an init method.
+    The doGet method will perform the following:
+        Create a local variable that references the ServletContext.
+        Get the EmployeeDirectory instance from the ServletContext that was placed there by the Application Start Servlet.
+        Get the search type and the search term from the HTML form.
+        Search for the employees by calling the appropriate method in the EmployeeDirectory instance and pass the search type and the search term to the method.
+        Place the Search object into the session.
+        The servlet will forward the request and response to the Employee Search Results page.
+
+Employee Search Results JSP Page
+
+    Create a JSP page that will display the results of the search or a message that no employees were found.
+    The content of the page should use a table to display the results with each found employee in a row.
+    The HTML table and header row should be part of the template text of the page.
+    The table rows must be generated with JSTL.
+
+Employee Add
+Employee Add JSP Page
+
+    Create a JSP page that will allow the user to add a new employee and place it in your public_html/jsp directory.
+    This page will contain an HTML POST form with the following fields:
+        First Name
+        Last Name
+        Social Security Number
+        Department
+        Room Number
+        Phone Number
+    The form will submit to the Add New Employee servlet.
+    Remember to make the form’s method a POST!
+    The page will also have a EL display of a message. The value of the message will be set by the Add servlet and can display success or validation messages. Something like this will work.
+    ?
+    1
+    2
+    3
+
+
+    <h3>${project4AddMessage}</h3>
+
+
+Employee Add JSP Page Display Servlet
+
+    Create a servlet that has one simple purpose, to forward to the Employee Add JSP Page. We’re going to only access JSP pages through servlets in this project.
+    The servlet will only have a doGet() method which forwards to the JSP page.
+
+Employee Add Action Servlet
+
+    Create a servlet that will add a new Employee to the application. Place it in the java112.project4 package.
+    The servlet will access the EmployeeDirectory instance from the ServletContext that was placed there by the Application Start Servlet. This can be done with an init() method or in the doPost() method.
+    The doPost() method will perform the following:
+        Extract the data for the new Employee from the HTML form.
+        Call the add employee method in the EmployeeDirectory instance and pass the form data as arguments.
+        Add the returned message to the session.
+        Send a redirect the browser to the Add Employee page. (NOT a forward this time.)
+    NOTE: It’s a doPost() method, not a doGet().
+
