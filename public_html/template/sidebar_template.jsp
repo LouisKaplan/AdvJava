@@ -10,6 +10,11 @@
         <li><a href="/java112/mvc-demo">MVC Demo</a></li>
         <li><a href="/java112/request-servlet">HTTP Request</a></li>
         <li><a href="/java112/project3-properties">Properties Servlet</a></li>
+        <li></li>
+        <li>--PROJECT 4--</li>
+        <li><a href="/java112/employeeSearch">Employee Search</a></li>
+        <li><a href="/java112/employeeAddDisplay">Employee Add</a></li>
+
     </ul>
 
 </div><!-- end #sidebar -->

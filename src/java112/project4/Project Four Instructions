@@ -10,9 +10,7 @@ Project 4 Properties File
     The file will also have entries to enable the application to establish a connection to a database.
     You will need the following entries:
         driver – this will be the fully qualified name of the driver class
-        url – this will be the URL to the database
-        username – your mysql username
-        password – your mysql password
+
 
 EmployeeDirectory Class
 
@@ -38,31 +36,15 @@ EmployeeDirectory Class
         If the query returns rows, then the method will instantiate a new Employee object for each row and set its instance variables from the row from the database. Each new Employee object will be added to the Search object with the addFoundEmployee() method.
         The method will close the connection.
 
-Employee Search
 Employee Search JSP Page
-
-    Create a JSP page that will allow the user to search for employees and place it in your public_html/jsp directory. Use the new template system for this page.
-    In the content portion of the page you should do the following.
-        Add an HTML form to the page that has the following features:
-            The action attribute will point to the Employee Search Servlet.
-            A text field for entering the search term.
-            A radio button set for selecting the search type. There will be 2 radio buttons, one for searching by ID and one for searching by Last Name.
-        A submit button.
-
-Employee Search JSP Page Display Servlet
-
-    Create a servlet that has one simple purpose, to forward to the Employee Search JSP Page. We’re going to only access JSP pages through servlets in this project.
-    The servlet will only have a doGet() method which forwards to the JSP page.
 
 Employee Search Results Servlet
 
-    Create a servlet that will perform searches for employees. Place it in the java112.project4 package.
-    This servlet will not need an init method.
     The doGet method will perform the following:
         Create a local variable that references the ServletContext.
         Get the EmployeeDirectory instance from the ServletContext that was placed there by the Application Start Servlet.
-        Get the search type and the search term from the HTML form.
-        Search for the employees by calling the appropriate method in the EmployeeDirectory instance and pass the search type and the search term to the method.
+        Search for the employees by calling the appropriate method in the
+            EmployeeDirectory instance and pass the search type and the search term to the method.
         Place the Search object into the session.
         The servlet will forward the request and response to the Employee Search Results page.
 

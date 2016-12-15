@@ -7,8 +7,6 @@ import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.annotation.*;
 import java.lang.*;
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Properties;
 
 @WebServlet(
@@ -19,6 +17,13 @@ import java.util.Properties;
 
 public class ApplicationStartup extends HttpServlet {
 
+    /**
+     *  init loads a properties file, adds it to the servletContext,
+     *  then creates an EmployeeDirectory, passes in the properties,
+     *  and adds that to the servletContext as well.
+     *
+     *@exception  ServletException  if there is a Servlet failure
+     */
     public void init() throws ServletException {
 
         Properties properties = new Properties();
@@ -37,24 +42,5 @@ public class ApplicationStartup extends HttpServlet {
             System.out.println("Problem: " + e);
             e.printStackTrace();
         }
-    }
-
-    /**
-     *  doGet uses the setAttribute method to make the properties file available to the JSP.
-     *
-     *@param  request                   the HttpServletRequest object
-     *@param  response                   the HttpServletResponse object
-     *@exception  ServletException  if there is a Servlet failure
-     *@exception  IOException       if there is an IO failure
-     */
-    public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
-
-
-        String url = "/.jsp";
-
-        RequestDispatcher dispatcher
-                = getServletContext().getRequestDispatcher(url);
-        dispatcher.forward(request, response);
     }
 }
